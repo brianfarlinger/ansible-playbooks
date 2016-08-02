@@ -11,5 +11,5 @@
       dest: /root/scripts/startup-tasks.sh
     notify:
     - start startup-tasks
-  - name: ensure apache is running (and enable it at boot)
+  - name: ensure service is running (and enable it at boot)
     service: name=startup-tasks state=started enabled=yes
