@@ -5,7 +5,7 @@
   - name: apply template to systemd
     template:
       src: common/templates/config/startup-tasks.service
-      dest: /etc/systemd/system/statup-tasks.service
+      dest: /etc/systemd/system/startup-tasks.service
     template:
       src: common/templates/scripts/startup-tasks.sh
       dest: /root/scripts/startup-tasks.sh
