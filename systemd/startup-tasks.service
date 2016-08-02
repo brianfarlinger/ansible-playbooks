@@ -1,0 +1,10 @@
+[Unit]
+Description=run tasks at system startup
+After=network.target
+
+[Service]
+ExecStart=/bin/bash /root/startup-tasks.sh
+Type=oneshot
+
+[Install]
+WantedBy=default.target
