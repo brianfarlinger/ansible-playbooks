@@ -1,0 +1,19 @@
+---
+- hosts: all
+  remote_user: root
+  tasks:
+  - name: ensure cron is installed and at the latest version
+    yum:
+      name: vixie-cron
+      state: latest
+  - name: apply standard cron configuration
+    template:
+      src: src=common/templates/cron-standard-template
+      dest: /etc/cron/standard.cron
+    notify:
+    - restart crond
+  - name: ensure cron is running and enabled
+    service:
+      name: crond
+      state: started
+      enabled: yes
