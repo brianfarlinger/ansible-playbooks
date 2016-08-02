@@ -1,0 +1,15 @@
+---
+- hosts: all
+  remote_user: root
+  tasks:
+  - name: apply template to systemd
+    template:
+      src: common/templates/config/startup-tasks.service
+      dest: /etc/systemd/system/statup-tasks.service
+    template:
+      src: common/templates/scripts/startup-tasks.sh
+      dest: /root/scripts/startup-tasks.sh
+    notify:
+    - start startup-tasks
+  - name: ensure apache is running (and enable it at boot)
+    service: name=startup-tasks state=started enabled=yes
