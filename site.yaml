@@ -1,0 +1,4 @@
+---
+# file: site.yaml
+- include: webservers.yaml
+- include: dbservers.yaml
