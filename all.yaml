@@ -1,0 +1,9 @@
+---
+# file: all.yml
+- hosts: all
+  roles:
+    - cron
+    - cron-yum
+    - firewalld
+    - sudoers
+    - systemd
