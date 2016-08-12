@@ -9,7 +9,7 @@ Director {
 }
 
 FileDaemon {                          
-  Name = {{ hostname }}-fd #Variable for hostname. Use FQDN + '-fd'
+  Name = {{ inventory_hostname }}-fd #Variable for hostname. Use FQDN + '-fd'
   FDport = 9102                
   WorkingDirectory = /var/spool/bacula
   Pid Directory = /var/run
