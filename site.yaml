@@ -1,4 +1,13 @@
 ---
-# file: site.yaml
-- include: webservers.yaml
-- include: dbservers.yaml
+# file: site:yaml
+- name: apply configuration to all nodes
+  hosts: all
+  remote_user: ansible
+  sudo: yes
+  roles:
+    - bacula
+    - cron-yum
+    - cron
+    - firewalld
+    - sudoers
+    - systemd
