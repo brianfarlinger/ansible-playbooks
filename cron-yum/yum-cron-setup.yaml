@@ -10,8 +10,6 @@
     template:
       src: src=common/templates/cron-yum.config
       dest: /etc/yum/yum-cron.conf
-    notify:
-    - restart yum-cron
   - name: ensure cron is running and enabled
     service:
       name: yum-cron
