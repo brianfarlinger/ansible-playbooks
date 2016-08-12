@@ -1,0 +1,22 @@
+Director {
+  Name = bacula-dir
+  Password = "NmYxZjg3ZDIwZDQ4NjE1MjliZDJkYmZkY" #Randomly generated
+}
+Director {
+  Name = bacula-mon
+  Password = "@@MON_FD_PASSWORD@@"
+  Monitor = yes
+}
+
+FileDaemon {                          
+  Name = {{ hostname }}-fd #Variable for hostname. Use FQDN + '-fd'
+  FDport = 9102                
+  WorkingDirectory = /var/spool/bacula
+  Pid Directory = /var/run
+  Maximum Concurrent Jobs = 20
+}
+
+Messages {
+  Name = Standard
+  director = bacula.lilac.red-dir = all, !skipped, !restored
+}
