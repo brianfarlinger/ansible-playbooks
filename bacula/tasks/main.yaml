@@ -1,0 +1,9 @@
+---
+- name: Install bacula-client
+  yum: 
+    name: bacula-client
+    state: latest
+- name: apply standard cron configuration
+  template:
+    src: src=common/templates/bacula-client.j2
+    dest: /etc/bacula/bacula-fs.conf
