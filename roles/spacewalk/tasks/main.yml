@@ -20,4 +20,4 @@
     state: latest
 - name: run script to join server to spacewalk
   script:
-    /common/files/join-spacewalk.sh
+    spacewalk/files/join-spacewalk.sh
