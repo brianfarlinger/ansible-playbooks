@@ -1,0 +1,23 @@
+---
+- name: Install spacewalk dependencies
+  yum: 
+    name: rhn-client-tools
+    state: latest
+  yum:
+    name: rhn-check
+    state: latest
+  yum:
+    name: rhn-setup
+    state: latest
+  yum:
+    name: rhnsd
+    state: latest
+  yum:
+    name: m2crypto
+    state: latest
+  yum: 
+    name: yum-rhn-plugin
+    state: latest
+- name: run script to join server to spacewalk
+  script:
+    /common/files/spacewalk-join.sh
