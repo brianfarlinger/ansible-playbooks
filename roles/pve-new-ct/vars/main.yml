@@ -13,5 +13,5 @@ vars_prompt:
     - name: "cpu"
       prompt: "How many CPUs should be assigned? [1]"
       default: "1"
-    - name: "staticip"
+    - name: "ip4"
       prompt: "What IP addess should be assigned?"
