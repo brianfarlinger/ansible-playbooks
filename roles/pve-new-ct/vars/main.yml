@@ -1,0 +1,17 @@
+---
+# Variables here are applicable to all host groups
+
+subnet: "255.255.255.0"
+gateway: "192.168.69.1"
+
+vars_prompt:
+    - name: "hostname"
+      prompt: "What is the hostname of this container?"
+    - name: "ram"
+      prompt: "How much RAM would you like to assign? [512]"
+      default: "512"
+    - name: "cpu"
+      prompt: "How many CPUs should be assigned? [1]"
+      default: "1"
+    - name: "staticip"
+      prompt: "What IP addess should be assigned?"
