@@ -1,0 +1,4 @@
+---
+- name: run script on proxmox host to create container
+  script:
+    spacewalk/files/new-ct.sh
